@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>{{category_name}}</title>
+	</head>
+	<body>
+		<h1>{{category_name}}</h1>
+		{% if category %}
+			{% if pages %}
+				<ul>
+					{% for page in pages %}
+						<li><a href="{{page.url}}">{{page.title}}</a>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<strong>Currently no page in category</strong>
+				number of returned values is {{pages.length}}
+			{% endif %}
+		{% else %}
+			The specified category <u>{{category_name}}</u> doesn't exist!
+		{% endif %}
+	</body>
+	
+</html>
